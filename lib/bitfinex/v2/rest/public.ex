@@ -6,7 +6,10 @@ defmodule Bitfinex.V2.Rest.Public do
   alias Bitfinex.V2.Http, as: Http
 
   def platform_status do
-    Http.get('/platform/status')
+    case Http.get('/platform/status') do
+      {:ok, [1]} -> :ok
+      {:ok, [0]} -> :maintenance
+    end
   end
 
   def tickers(symbols) when is_list(symbols) do

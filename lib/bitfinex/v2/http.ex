@@ -30,11 +30,11 @@ defmodule Bitfinex.V2.Http do
   end
 
   def api_response({:ok, %HTTPoison.Response{status_code: 200, body: body}}) do
-    {:ok, Map.get(Poison.decode!(body), "result")}
+    {:ok, Poison.decode!(body)}
   end
 
   def api_response({:ok, %HTTPoison.Response{status_code: _, body: body}}) do
-    {:error, Map.get(Poison.decode!(body), "error") }
+    {:error, Poison.decode!(body)}
   end
 
   def api_response(_) do
