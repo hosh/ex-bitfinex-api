@@ -2,23 +2,23 @@ defmodule Bitfinex.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :bitfinex_ex,
-     version: "0.0.1",
+    [app: :ex_bitfinex_api,
+     version: "0.1.0",
      elixir: "~> 1.3",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     package: package,
-     description: description,
-     deps: deps]
+     package: package(),
+     description: description(),
+     deps: deps()]
   end
 
   # Configuration for the OTP application
   #
   # Type "mix help compile.app" for more information
-  def application do
-    [applications: [:logger],
-     mod: {Bitfinex, []}]
-  end
+  #def application do
+  #  [applications: [:logger],
+  #   mod: {Bitfinex, []}]
+  #end
 
   defp deps do
     [
@@ -32,9 +32,9 @@ defmodule Bitfinex.Mixfile do
   def package do
     [
      files: ["lib", "priv", "mix.exs", "README*", "readme*", "LICENSE*", "license*"],
-     maintainers: ["ontofractal"],
+     maintainers: ["Ho-Sheng Hsiao"],
      licenses: ["MIT"],
-     links: %{"GitHub" => "https://github.com/cyberpunk-ventures/bitfinex_ex"}]
+     links: %{"GitHub" => "https://github.com/hsoh/ex-bitfinex-api"}]
   end
 
   def description do

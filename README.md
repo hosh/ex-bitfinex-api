@@ -1,5 +1,7 @@
 # Bitfinex
 
+Based on https://github.com/cyberpunk-ventures/bitfinex_ex
+
 WIP, alpha.
 
 Elixir wrapper for bitfinex API.
@@ -11,7 +13,7 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
   1. Add bitfinex to your list of dependencies in `mix.exs`:
 
         def deps do
-          [{:bitfinex, "~> 0.0.1"}]
+          [{:ex_bitfinex_api, "~> 0.1.0"}]
         end
 
   2. Ensure bitfinex is started before your application:
